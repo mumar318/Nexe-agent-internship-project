@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Muhammad Umar — Agentic AI Intern @ Nexe-Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050a10;--surface:#0b1420;--surface2:#0f1c2e;
+  --cyan:#00e5ff;--blue:#1a6fff;--teal:#00bfa5;
+  --text:#e2eaf5;--muted:#6b7fa3;--border:#1a2a40;
+  --font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(5,10,16,.75);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-head);font-weight:800;font-size:1.1rem;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-family:var(--font-mono);letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:var(--cyan)}
+section{position:relative;z-index:1;padding:6rem 5%}
+.container{max-width:1100px;margin:0 auto}
+</style>
+<style>
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%}
+.hero-tag{font-family:var(--font-mono);font-size:.75rem;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem;opacity:.8}
+.hero-title{font-family:var(--font-head);font-weight:800;font-size:clamp(2.8rem,6vw,5rem);line-height:1.05;margin-bottom:1rem}
+.hero-title span{background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:540px;margin-bottom:2rem}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.badge{font-family:var(--font-mono);font-size:.7rem;padding:.3rem .75rem;border-radius:20px;border:1px solid;letter-spacing:.06em}
+.badge-cyan{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,.07)}
+.badge-blue{border-color:var(--blue);color:var(--blue);background:rgba(26,111,255,.07)}
+.badge-teal{border-color:var(--teal);color:var(--teal);background:rgba(0,191,165,.07)}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:8px;font-size:.9rem;font-weight:500;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#050a10;font-weight:700}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,229,255,.3)}
+.btn-outline{border:1.5px solid var(--border);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid var(--border);padding-top:2.5rem}
+.stat-item{text-align:center}
+.stat-num{font-family:var(--font-head);font-weight:800;font-size:2.2rem;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.75rem;color:var(--muted);font-family:var(--font-mono);letter-spacing:.06em;margin-top:.25rem}
+/* SECTION HEADERS */
+.sec-label{font-family:var(--font-mono);font-size:.72rem;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.75rem}
+.sec-title{font-family:var(--font-head);font-weight:800;font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:.75rem}
+.sec-title span{background:linear-gradient(135deg,var(--cyan),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-desc{color:var(--muted);max-width:520px;margin-bottom:3rem}
+</style>
+<style>
+/* LEVELS */
+.levels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.level-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;border-top:3px solid;transition:transform .25s,box-shadow .25s}
+.level-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.level-card.teal{border-top-color:var(--teal)}
+.level-card.blue{border-top-color:var(--blue)}
+.level-card.cyan{border-top-color:var(--cyan)}
+.level-icon{font-size:2rem;margin-bottom:1rem}
+.level-name{font-family:var(--font-head);font-weight:800;font-size:1.3rem;margin-bottom:.5rem}
+.level-desc{color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
+.tech-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tech-tag{font-family:var(--font-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:4px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
+/* PROJECTS */
+.projects-group{margin-bottom:3rem}
+.group-label{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.group-line{flex:1;height:1px;background:var(--border)}
+.group-title{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;border:1px solid}
+.group-title.teal{color:var(--teal);border-color:var(--teal);background:rgba(0,191,165,.07)}
+.group-title.blue{color:var(--blue);border-color:var(--blue);background:rgba(26,111,255,.07)}
+.group-title.cyan{color:var(--cyan);border-color:var(--cyan);background:rgba(0,229,255,.07)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.proj-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.45)}
+.proj-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.proj-level{font-family:var(--font-mono);font-size:.65rem;padding:.25rem .65rem;border-radius:4px;border:1px solid}
+.proj-level.teal{color:var(--teal);border-color:var(--teal);background:rgba(0,191,165,.08)}
+.proj-level.blue{color:var(--blue);border-color:var(--blue);background:rgba(26,111,255,.08)}
+.proj-level.cyan{color:var(--cyan);border-color:var(--cyan);background:rgba(0,229,255,.08)}
+.proj-status{display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-family:var(--font-mono);color:#4cff91}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:#4cff91;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(76,255,145,.4)}50%{box-shadow:0 0 0 6px rgba(76,255,145,0)}}
+.proj-name{font-family:var(--font-head);font-weight:800;font-size:1.15rem;margin-bottom:.5rem}
+.proj-desc{color:var(--muted);font-size:.875rem;margin-bottom:1rem}
+.proj-features{list-style:none;margin-bottom:1.5rem;flex:1}
+.proj-features li{font-size:.825rem;color:var(--muted);padding:.2rem 0;display:flex;gap:.5rem}
+.proj-features li::before{content:'▸';color:var(--cyan);flex-shrink:0}
+.proj-links{display:flex;gap:.75rem;margin-top:auto}
+.proj-link{flex:1;text-align:center;padding:.55rem 1rem;border-radius:8px;font-size:.8rem;font-weight:500;text-decoration:none;transition:all .2s;font-family:var(--font-mono)}
+.proj-link.gh{border:1px solid var(--border);color:var(--muted)}
+.proj-link.gh:hover{border-color:var(--cyan);color:var(--cyan)}
+.proj-link.live{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#050a10;font-weight:700}
+.proj-link.live:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,229,255,.3)}
+</style>
+<style>
+/* SKILLS */
+.skills-grid{display:flex;flex-wrap:wrap;gap:.75rem}
+.skill-pill{font-family:var(--font-mono);font-size:.75rem;padding:.45rem 1rem;border-radius:24px;border:1px solid var(--border);color:var(--text);background:var(--surface);transition:all .2s;letter-spacing:.04em}
+.skill-pill:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,.07);transform:translateY(-2px)}
+/* CONTACT */
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-links{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.contact-link{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text);padding:1rem 1.25rem;border:1px solid var(--border);border-radius:12px;background:var(--surface);transition:all .22s}
+.contact-link:hover{border-color:var(--cyan);transform:translateX(4px)}
+.contact-link-icon{font-size:1.2rem}
+.contact-link-text{font-size:.9rem}
+.contact-link-sub{font-size:.75rem;color:var(--muted);font-family:var(--font-mono)}
+.info-table{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.info-row{display:flex;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);font-size:.875rem}
+.info-row:last-child{border-bottom:none}
+.info-key{color:var(--muted);font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em}
+.info-val{font-weight:500;text-align:right}
+.info-val.done{color:#4cff91;font-family:var(--font-mono)}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 5%;text-align:center;color:var(--muted);font-size:.8rem;font-family:var(--font-mono);position:relative;z-index:1}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .contact-inner{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .levels-grid{grid-template-columns:1fr}
+  section{padding:4rem 5%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Muhammad Umar</div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#levels">Levels</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-tag reveal">Nexe-Agent Internship &mdash; 2026</p>
+    <h1 class="hero-title reveal">
+      Muhammad<br/><span>Umar</span>
+    </h1>
+    <p class="hero-sub reveal">Data Scientist &amp; AI Intern building Agentic AI systems &mdash; from tool-calling agents to autonomous multi-agent orchestration.</p>
+    <div class="badges reveal">
+      <span class="badge badge-cyan">Agentic AI</span>
+      <span class="badge badge-blue">LLM Tool-Calling</span>
+      <span class="badge badge-teal">RAG Systems</span>
+      <span class="badge badge-cyan">Multi-Agent</span>
+      <span class="badge badge-blue">FastAPI</span>
+      <span class="badge badge-teal">Streamlit</span>
+    </div>
+    <div class="hero-btns reveal">
+      <a href="#projects" class="btn btn-primary">⚡ View Projects</a>
+      <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="btn btn-outline">🐙 GitHub Repo</a>
+    </div>
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Levels</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Live Demos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">GitHub Repos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section id="levels">
+  <div class="container">
+    <p class="sec-label reveal">Learning Path</p>
+    <h2 class="sec-title reveal">Three <span>Levels</span></h2>
+    <p class="sec-desc reveal">A structured progression from foundational AI tool-calling to advanced autonomous multi-agent architectures.</p>
+    <div class="levels-grid">
+      <div class="level-card teal reveal">
+        <div class="level-icon">🌱</div>
+        <div class="level-name">Beginner</div>
+        <div class="level-desc">Foundation of AI agents &mdash; understanding tool-calling, LLM integration, structured JSON output, SQLite logging, and building simple FastAPI + Streamlit stacks.</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Groq LLaMA</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Tool-Calling</span><span class="tech-tag">SQLite</span>
+        </div>
+      </div>
+      <div class="level-card blue reveal">
+        <div class="level-icon">⚙️</div>
+        <div class="level-name">Intermediate</div>
+        <div class="level-desc">Real-world integrations &mdash; web search via SerpAPI, Gmail SMTP, ChromaDB vector stores, LangChain RAG pipelines, and document Q&amp;A with source citations.</div>
+        <div class="tech-tags">
+          <span class="tech-tag">SerpAPI</span><span class="tech-tag">Gmail SMTP</span><span class="tech-tag">LangChain</span><span class="tech-tag">ChromaDB</span><span class="tech-tag">RAG</span><span class="tech-tag">Embeddings</span>
+        </div>
+      </div>
+      <div class="level-card cyan reveal">
+        <div class="level-icon">🚀</div>
+        <div class="level-name">Advanced</div>
+        <div class="level-desc">Autonomous systems &mdash; multi-step task planning, planner/executor/synthesiser LLM chains, typed message bus, specialist agent orchestration, and full execution logging.</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Orchestration</span><span class="tech-tag">Message Bus</span><span class="tech-tag">Multi-Agent</span><span class="tech-tag">Task Planning</span><span class="tech-tag">Agentic AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="sec-label reveal">Portfolio</p>
+    <h2 class="sec-title reveal">All <span>Projects</span></h2>
+    <p class="sec-desc reveal">Six complete AI agent systems, each deployed live on Streamlit Cloud with full source code on GitHub.</p>
+
+    <!-- BEGINNER -->
+    <div class="projects-group reveal">
+      <div class="group-label">
+        <div class="group-line"></div>
+        <span class="group-title teal">🌱 Beginner</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="proj-card">
+          <div class="proj-header">
+            <span class="proj-level teal">Task 1</span>
+            <span class="proj-status"><span class="pulse-dot"></span>Completed</span>
+          </div>
+          <div class="proj-name">Tool-Calling AI Agent</div>
+          <div class="proj-desc">Natural language to tool calls &mdash; math and real-time weather via Groq LLaMA.</div>
+          <ul class="proj-features">
+            <li>LLM-powered tool selection from natural language</li>
+            <li>Real-time weather via OpenWeatherMap API</li>
+            <li>Structured JSON response schema</li>
+            <li>SQLite interaction logging</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="proj-link gh">🐙 GitHub</a>
+            <a href="https://nexe-agent-internship-project-2prbbtgdpwgejgbrvopvuf.streamlit.app/" target="_blank" rel="noopener" class="proj-link live">⚡ Live Demo</a>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-header">
+            <span class="proj-level teal">Task 2</span>
+            <span class="proj-status"><span class="pulse-dot"></span>Completed</span>
+          </div>
+          <div class="proj-name">AI Calculator Agent</div>
+          <div class="proj-desc">8 math tools plus in-session memory for chained multi-step calculations.</div>
+          <ul class="proj-features">
+            <li>add, subtract, multiply, divide, power, square root</li>
+            <li>In-session memory: store &amp; recall results</li>
+            <li>Float operand support on all operations</li>
+            <li>Division by zero &amp; negative sqrt handled gracefully</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="proj-link gh">🐙 GitHub</a>
+            <a href="https://nexe-agent-internship-project-65dgo8tnxrxs7tzjvnzkbw.streamlit.app/" target="_blank" rel="noopener" class="proj-link live">⚡ Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERMEDIATE -->
+    <div class="projects-group reveal">
+      <div class="group-label">
+        <div class="group-line"></div>
+        <span class="group-title blue">⚙️ Intermediate</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="proj-card">
+          <div class="proj-header">
+            <span class="proj-level blue">Task 3</span>
+            <span class="proj-status"><span class="pulse-dot"></span>Completed</span>
+          </div>
+          <div class="proj-name">Multi-Tool Agent</div>
+          <div class="proj-desc">Web search, database notes, and Gmail email &mdash; all via natural language.</div>
+          <ul class="proj-features">
+            <li>Google search via SerpAPI (top 3 results)</li>
+            <li>Persistent note saving to SQLite</li>
+            <li>Gmail email via SMTP (App Password)</li>
+            <li>2-tab UI: Chat + Saved Notes viewer</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="proj-link gh">🐙 GitHub</a>
+            <a href="https://nexe-agent-internship-project-lezqjyjyzkm5bevuhr5suu.streamlit.app/" target="_blank" rel="noopener" class="proj-link live">⚡ Live Demo</a>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-header">
+            <span class="proj-level blue">Task 4</span>
+            <span class="proj-status"><span class="pulse-dot"></span>Completed</span>
+          </div>
+          <div class="proj-name">RAG Assistant</div>
+          <div class="proj-desc">Upload PDF/TXT/MD documents and ask questions grounded in your knowledge base.</div>
+          <ul class="proj-features">
+            <li>ChromaDB vector store with ONNX embeddings</li>
+            <li>LangChain document chunking (500 char, 50 overlap)</li>
+            <li>Groq LLaMA answers strictly from context</li>
+            <li>Source citations on every answer</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="proj-link gh">🐙 GitHub</a>
+            <a href="https://nexe-agent-internship-project-jrbssuqw8ase6onxhenpsz.streamlit.app/" target="_blank" rel="noopener" class="proj-link live">⚡ Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADVANCED -->
+    <div class="projects-group reveal">
+      <div class="group-label">
+        <div class="group-line"></div>
+        <span class="group-title cyan">🚀 Advanced</span>
+        <div class="group-line"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="proj-card">
+          <div class="proj-header">
+            <span class="proj-level cyan">Task 5</span>
+            <span class="proj-status"><span class="pulse-dot"></span>Completed</span>
+          </div>
+          <div class="proj-name">Autonomous Business Agent</div>
+          <div class="proj-desc">Give it a high-level business task — it plans, executes, and logs everything autonomously.</div>
+          <ul class="proj-features">
+            <li>Planner LLM breaks task into ordered steps</li>
+            <li>Executor LLM selects tool per step</li>
+            <li>Synthesiser LLM generates final answer</li>
+            <li>Full execution trace persisted to SQLite</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="proj-link gh">🐙 GitHub</a>
+            <a href="https://nexe-agent-internship-project-kchyqmzjoqwjyxvmczxgkh.streamlit.app/" target="_blank" rel="noopener" class="proj-link live">⚡ Live Demo</a>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-header">
+            <span class="proj-level cyan">Task 6</span>
+            <span class="proj-status"><span class="pulse-dot"></span>Completed</span>
+          </div>
+          <div class="proj-name">Multi-Agent System</div>
+          <div class="proj-desc">Orchestrator delegates to 4 specialist agents through a typed, logged message bus.</div>
+          <ul class="proj-features">
+            <li>Orchestrator + Research + Writer + Email + Calculator agents</li>
+            <li>Typed MessageBus with full SQLite persistence</li>
+            <li>Live message bus visibility in UI</li>
+            <li>Streamlit Cloud deployed, no FastAPI needed</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="proj-link gh">🐙 GitHub</a>
+            <a href="https://nexe-agent-internship-project-z9ggrqpi4htb4isupfmvhf.streamlit.app/" target="_blank" rel="noopener" class="proj-link live">⚡ Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="sec-label reveal">Tech Stack</p>
+    <h2 class="sec-title reveal">Skills &amp; <span>Technologies</span></h2>
+    <p class="sec-desc reveal">Every tool used across the six projects in this internship.</p>
+    <div class="skills-grid reveal">
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Streamlit</span>
+      <span class="skill-pill">FastAPI</span>
+      <span class="skill-pill">Groq API</span>
+      <span class="skill-pill">LLaMA 3.1</span>
+      <span class="skill-pill">LangChain</span>
+      <span class="skill-pill">Tool Calling</span>
+      <span class="skill-pill">Function Calling</span>
+      <span class="skill-pill">AI Agents</span>
+      <span class="skill-pill">Multi-Agent</span>
+      <span class="skill-pill">Agentic AI</span>
+      <span class="skill-pill">Generative AI</span>
+      <span class="skill-pill">RAG</span>
+      <span class="skill-pill">Vector DB</span>
+      <span class="skill-pill">ChromaDB</span>
+      <span class="skill-pill">Embeddings</span>
+      <span class="skill-pill">Prompt Engineering</span>
+      <span class="skill-pill">SerpAPI</span>
+      <span class="skill-pill">Gmail SMTP</span>
+      <span class="skill-pill">SQLite</span>
+      <span class="skill-pill">OpenWeatherMap</span>
+      <span class="skill-pill">Git / GitHub</span>
+      <span class="skill-pill">Streamlit Cloud</span>
+      <span class="skill-pill">REST APIs</span>
+      <span class="skill-pill">Pydantic</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="sec-label reveal">Get In Touch</p>
+    <h2 class="sec-title reveal"><span>Contact</span> &amp; Info</h2>
+    <p class="sec-desc reveal">Reach out for collaboration, questions, or internship opportunities.</p>
+    <div class="contact-inner">
+      <div>
+        <div class="contact-links reveal">
+          <a href="https://github.com/mumar318/Nexe-agent-internship-project" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">🐙</span>
+            <div>
+              <div class="contact-link-text">GitHub Repository</div>
+              <div class="contact-link-sub">mumar318/Nexe-agent-internship-project</div>
+            </div>
+          </a>
+          <a href="mailto:nexeagent@gmail.com" class="contact-link">
+            <span class="contact-link-icon">📧</span>
+            <div>
+              <div class="contact-link-text">Email</div>
+              <div class="contact-link-sub">nexeagent@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/nexe-agent" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">💼</span>
+            <div>
+              <div class="contact-link-text">LinkedIn</div>
+              <div class="contact-link-sub">Nexe-Agent</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="info-table reveal">
+        <div class="info-row"><span class="info-key">ORGANIZATION</span><span class="info-val">Nexe-Agent</span></div>
+        <div class="info-row"><span class="info-key">ROLE</span><span class="info-val">Data Scientist &amp; AI Intern</span></div>
+        <div class="info-row"><span class="info-key">YEAR</span><span class="info-val">2026</span></div>
+        <div class="info-row"><span class="info-key">TASKS COMPLETED</span><span class="info-val done">6 / 6</span></div>
+        <div class="info-row"><span class="info-key">STATUS</span><span class="info-val done">✓ All Done</span></div>
+        <div class="info-row"><span class="info-key">LIVE DEPLOYMENTS</span><span class="info-val done">6 / 6</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built by Muhammad Umar &mdash; Nexe-Agent Internship 2026 &mdash; Agentic AI
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80 * (Array.from(entry.target.parentElement?.children || []).indexOf(entry.target)));
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
